@@ -4,7 +4,7 @@ This repository is dedicated to the ACM club within UTSA. As a club supporting s
 
 ###Development Plans:
 
-Our development plans are to utilize the <a href ="https://github.com/h5bp/html5-boilerplate">HTML5 Boiler Plate</a> and <a href = "https://github.com/angular/angular.js">AngularJs</a>. 
+Our development plans are to utilize the <a href ="https://github.com/h5bp/html5-boilerplate">HTML5 Boilerplate</a>, <a href = "https://github.com/angular/angular.js">Angular.js</a>, and <a href = "https://github.com/twbs/bootstrap">Bootstrap</a>. 
 
 All pull requests will be reviewed by our Webmaster and added if deemed necessary. If changes are needed to your fork, we will recommend these changes and deny the pull request until they are fixed. Please feel free to ask if you need help with your changes.
 
