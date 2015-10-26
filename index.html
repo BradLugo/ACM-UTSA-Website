@@ -20,7 +20,26 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div ui-view></div>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/">ACM at UTSA</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse" ng-controller="NavigationController">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li ng-class="{ active: isActive('/')}"><a href="/">Home</a></li>
+                            <li ng-class="{ active: isActive('/contact')}"><a href="/contact">Contact Us</a></li>
+                            <li ng-class="{ active: isActive('/calendar')}"><a href="/calendar">Calendar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+            <div ui-view></div>
+        </div>
 
         <script src="/js/vendor/jquery-2.1.4.min.js"></script>
         <script src="/js/vendor/angular-1.4.6.min.js"></script>
