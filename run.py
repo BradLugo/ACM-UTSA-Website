@@ -1,32 +1,33 @@
 #!/usr/bin/python
 
-import SimpleHTTPServer, SocketServer
-import urlparse, os, sys
+import SimpleHTTPServer
+import SocketServer
+import urlparse
+import os
+import sys
 
-PORT = int(sys.argv[1])
-INDEXFILE = 'index.html'
 
 class CustomHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
-   def do_GET(self):
+    def do_GET(self):
+        parsedParams = urlparse.urlparse(self.path)
 
-    # Parse query data to find out what was requested
-    parsedParams = urlparse.urlparse(self.path)
+        if os.access('.' + os.sep + parsedParams.path, os.R_OK):
+            SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
 
-     # See if the file requested exists
-    if os.access('.' + os.sep + parsedParams.path, os.R_OK):
-        # File exists, serve it up
-        SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self);
-    else:
-        # send index.html, but don't redirect
-        self.send_response(200)
-        self.send_header('Content-Type', 'text/html')  
-        self.end_headers()
-        with open(INDEXFILE, 'r') as fin:
-          self.copyfile(fin, self.wfile)
+        else:
+            self.send_response(200)
+            self.send_header('Content-Type', 'text/html')
+            self.end_headers()
+            with open(INDEXFILE, 'r') as fin:
+                self.copyfile(fin, self.wfile)
 
-Handler = CustomHandler
+if __name__ == '__main__':
+    PORT = 3000 if len(sys.argv) > 0 else int(sys.argv[1])
+    INDEXFILE = 'index.html'
 
-httpd = SocketServer.TCPServer(("", PORT), Handler)
+    Handler = CustomHandler
 
-print "serving at port", PORT
-httpd.serve_forever()
+    httpd = SocketServer.TCPServer(("", PORT), Handler)
+
+    print "Serving HTTP on 0.0.0.0 port", PORT, "..."
+    httpd.serve_forever()
