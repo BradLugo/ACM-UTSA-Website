@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="" ng-app="ACM-UTSA">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Contact Us</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+        <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">ACM at UTSA</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse" ng-controller="NavigationController">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li ng-class="{ active: isActive('/')}"><a href="index.html">Home</a></li>
+                            <li ng-class="{ active: isActive('/contact')}"><a href="contact.html">Contact Us</a></li>
+                            <li ng-class="{ active: isActive('/calendar')}"><a href="calendar.html">Calendar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+            <div class="well">
+                <center><h1>Contact Page</h1></center>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <center><p>Contact Info</p></center>
+                    <p>Email: <a href="mailto:acm.utsa@gmail.com">acm.utsa@gmail.com</a><p>
+                </div>
+                <div class="col-xs-8">
+                    <center><p>Form</p></center>
+                    <form>
+                        <div class="form-group">
+                            <label for="InputEmail">Email address</label>
+                            <input type="email" class="form-control" id="InputEmail" placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="InputName">Full Name</label>
+                            <input type="name" class="form-control" id="InputName" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="InputText">Body</label>
+                            <textarea type="TextField" class="form-control" id="InputText" placeholder="Text" style="height:300px;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <!-- Remove navbar-fixed-bottom when filling page. It is to hold it at bottom temp -->
+        <div class="navbar-default footer navbar-fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p>col-xs-6</p>
+                        <p>ACM UTSA footer col1</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p>col-xs-6</p>
+                        <p>ACM UTSA footer col2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </body>
+</html>
