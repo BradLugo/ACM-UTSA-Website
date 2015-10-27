@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="" ng-app="ACM-UTSA">
+<html class="no-js" lang="en" ng-app="ACM-UTSA">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -28,7 +28,7 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse" ng-controller="NavigationController">
                         <ul class="nav navbar-nav navbar-right">
-                            <li ng-class="{ active: isActive('/')}"><a href="/">Home</a></li>
+                            <li ng-class="{ active: isActive('/home')}"><a href="/">Home</a></li>
                             <li ng-class="{ active: isActive('/contact')}"><a href="/contact">Contact Us</a></li>
                             <li ng-class="{ active: isActive('/calendar')}"><a href="/calendar">Calendar</a></li>
                         </ul>
@@ -40,6 +40,21 @@
         <div class="container">
             <div ui-view></div>
         </div>
+        
+        <footer>
+            <div class="navbar navbar-default">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <p>ACM UTSA footer col1</p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p>ACM UTSA footer col2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
         <script src="/js/vendor/jquery-2.1.4.min.js"></script>
         <script src="/js/vendor/angular-1.4.6.min.js"></script>
