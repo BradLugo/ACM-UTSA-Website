@@ -16,7 +16,6 @@ html {
 
 body {
     padding-top: 70px;
-    background-color: #fff;
 }
 
 /*
@@ -92,8 +91,8 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-a:link{
-    text-decoration: none;
+a:link {
+    text-decoration: inherit;
 }
 
 
